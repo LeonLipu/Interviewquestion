@@ -1,0 +1,40 @@
+package general;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+
+public class uniquestrong {
+
+	public static void main(String[] args) throws IOException {
+
+		BufferedReader bf = new BufferedReader(new FileReader(
+				"brahmanandakar.txt"));
+
+		String line = "", totalString = "";
+
+		while ((line = bf.readLine()) != null) {
+			System.out.println(line);
+			totalString = totalString + line;
+
+		}
+
+		String[] arr = totalString.split(" ");
+		HashMap<String, Integer> hm = new HashMap<String, Integer>();
+		for (String word : arr) {
+			int count = Collections.frequency(Arrays.asList(arr), word);
+
+			if (count > 1) {
+				hm.put(word, count);
+			}
+
+		}
+		
+		System.out.println(hm);
+//		System.out.println(totalString);
+	}
+
+}

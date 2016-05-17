@@ -1,0 +1,25 @@
+package general;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class uniquestrong {
+
+	public static void main(String[] args) throws IOException {
+
+		BufferedReader bf = new BufferedReader(new FileReader(
+				"brahmanandakar.txt"));
+
+		String line = "", totalString = "";
+
+		while ((line = bf.readLine()) != null) {
+			System.out.println(line);
+			totalString = totalString + line;
+
+		}
+System.out.println(totalString);
+	}
+
+}
